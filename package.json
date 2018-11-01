@@ -1,0 +1,24 @@
+{
+  "name": "desafio-storm-group",
+  "version": "1.0.0",
+  "description": "Este é o desafio do processo seletivo da storm group",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriquesbezerra/desafio-storm-group.git"
+  },
+  "keywords": [
+    "desafio",
+    "storm",
+    "grup"
+  ],
+  "author": "Henrique Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henriquesbezerra/desafio-storm-group/issues"
+  },
+  "homepage": "https://github.com/henriquesbezerra/desafio-storm-group#readme"
+}
