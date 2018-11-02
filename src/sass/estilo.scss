@@ -1,8 +1,3 @@
-h1{
-    color:green;
-    small{
-        font-size: 30px;
-        display: flex;
-        box-shadow: 1px 1px 1px black;
-    }
-}
+@import 'reset';
+@import 'grid';
+@import 'menu';
