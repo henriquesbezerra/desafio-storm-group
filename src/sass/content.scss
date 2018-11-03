@@ -1,0 +1,58 @@
+.main{
+    background-color: #000;
+    color: #e4f2fd;
+    padding-top: 62px;
+    padding-bottom: 42px;
+
+    .selection__nav{
+        width: 100%;
+        height: 34px;
+        box-shadow: 0.5px 0.9px 0 0 rgba(0, 0, 0, 0.18);
+        border: solid 1px rgba(87, 88, 88, 0.41);
+        border-radius: 4px;
+        text-transform: uppercase; 
+        margin-bottom: 20px;       
+    }
+}
+
+.post{
+    &__item{
+        font-family: "Trebuchet MS";
+        &--header{
+            display: none;
+        }        
+        &--thumb{
+            margin-bottom: 20px;
+            .special__border{
+                &-1{    
+                    position: absolute;
+                    display: block;
+                }   
+                &-2{    
+                    position: absolute;
+                    display: block;
+                }   
+                &-3{    
+                    position: absolute;
+                    display: block;
+                }   
+            }
+        }
+        &--img{
+            display: block;
+            width: 100%;
+            margin-bottom: 5px
+        }
+        &--legend{
+            font-size: 10px;            
+        }
+        &--content{
+            p{
+                font-size: 14px;
+                margin-bottom: 10px;
+                line-height: 18px;
+            }
+
+        }
+    }
+}

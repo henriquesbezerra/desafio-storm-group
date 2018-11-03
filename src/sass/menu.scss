@@ -1,17 +1,19 @@
-.menu{
-    height: 42px;
+.menu{ 
+    z-index: 99;  
     position: fixed;
+    right: 10px;
+    left: 10px;
     top: 10px;
-    width: 300px;
-    border-radius: 4px;
-    background-image: linear-gradient(to top, #0e0e0e, #313030);
-    
+    margin-left: auto;
+    width: auto;     
     &__brand{
         height: 42px;
         display: flex;
         align-items: center;
         justify-content: space-between;   
         padding-left: 10px;    
+        border-radius: 4px;
+        background-image: linear-gradient(to top, #0e0e0e, #313030);        
         &--bars{
             width: 37px;
             height: 42px;
@@ -42,9 +44,27 @@
         background-color: rgba(23, 23, 23, 0.94);
         float: right;        
         font-family: "Trebuchet MS";
+        height: 0;
+        overflow: auto;
+        transition: all .3s linear 0s;
+        &.active{
+            height: 320px;           
+        }
         .link{
             border-bottom: 1px solid #444242;
             padding: 10px;
+            display: flex;
+            align-items: center;
+            &.active{
+                .active_link{
+                    display: block;
+                    width: 14px;
+                    height: 4px;
+                    margin-left: 10px;
+                    box-shadow: 0.5px 0.9px 0 0 rgba(0, 0, 0, 0.16);
+                    background-color: rgb(255, 255, 0);
+                }
+            }
             &.nb{
                 border-bottom: none;
             }
@@ -60,11 +80,104 @@
             color:#FFF;
             background-color: #171717;
             padding: 10px;
+            .address{
+                &_uf{
+                    font-weight: bold;
+                    font-size: 13px;                
+                }
+                 
+                &_cep{
+                    margin-bottom: 12px;
+                }               
+                &_tel{
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
         }
         &--lang{
             background-image: linear-gradient(to top, #0e0e0e, #313030);
             padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            .lang{
+                &_title{
+                    color: #fff;
+                }
+            }
+            a{
+                color: #929292;
+                &.active{
+                    color: #fff;
+                }
+            }
         }
     }
+}
 
+@media(min-width:1024px){
+    .menu{          
+        left: 50%;   
+        margin-left: -493px; 
+        width: 986px; 
+        display: flex;
+        justify-content: space-between; 
+        border-radius: 4px;
+        background-image: linear-gradient(to top, #0e0e0e, #313030);  
+        &__brand{
+            height: 56px;
+            border-radius: 0px;
+            background-image: none;  
+            &--bars{
+                display: none;
+            }
+        }
+        &__nav{
+            height: 56px;
+            min-width: 540px;
+            background-color: rgba(0, 0, 0, 0); 
+            overflow: inherit;
+ 
+            ul{
+                width: 100%;
+
+            }
+            .link{
+                border-bottom: none;
+                float: left;
+                height: 56px;
+                padding: 10px 0px 10px 10px;               
+                a{
+                    border-right: 1px solid #444242;
+                    padding-right: 10px; 
+                    display: block; 
+                    color: #cecece;
+                    line-height: 20px;                   
+                }                
+                &.active{
+                    border-bottom: 4px solid rgb(255, 255, 0);
+                    height: 59px;
+                    .active_link{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    border-bottom: 4px solid rgb(255, 255, 0);
+                    height: 59px;
+                }
+                &.nb{  
+                    a{
+                        border-right: none; 
+                    }              
+                                
+                }
+            }           
+            &--address{
+                display: none;
+            }
+            &--lang{
+                display: none;
+            }
+        }
+    }
 }

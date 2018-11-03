@@ -1,0 +1,178 @@
+.slider{
+    width: 100%;   
+    background-image: url('../images/slider-back.png');
+    &__faixas{
+        width: 100%;       
+        background:none;
+    }   
+    .owl-carousel{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 60px;   
+        .owl-item{
+            img{
+                &.slider__img--back{
+                    display: none;
+                }
+                &.slider__img--upper{
+                    width: 70%;
+                }
+            }
+        }   
+    }
+   
+    &__caption{
+        display: none;
+    }   
+    
+    &__img{
+        &--back{
+            display: none;            
+        }
+        &--upper{
+            position: relative;
+            margin: 0 auto;            
+            display: block;
+        }
+    }
+  
+    .owl-nav{
+        position: absolute;
+        top: 42%;
+        width: 100%;      
+        .owl-prev{
+            span{ 
+                cursor: pointer;               
+                display: block;
+                background: url('../images/setas-slider.png') no-repeat 0 0;
+                width: 25px;
+                height: 40px;
+                position: absolute;
+                background-position: bottom left;
+                background-size: 200% 200%;
+                left: 0;
+                color: #fff0;
+                &:hover{
+                    background-position: bottom right;
+                }
+            }
+        }
+        .owl-next{
+            span{  
+                cursor: pointer;              
+                display: block;
+                background: url('../images/setas-slider.png') no-repeat 0 0;
+                width: 25px;
+                height: 40px;
+                position: absolute;
+                background-position: top left;
+                right: 0;                
+                background-size: 200% 200%;
+                color: #fff0;
+                &:hover{
+                    background-position: top right;
+                }
+            }
+        }
+    }      
+}
+@media(min-width: 425px){
+    .slider{
+        width: 100%;
+        height: auto;      
+        background-image: url('../images/slider-back.png');
+        &__faixas{
+            width: 100%; 
+            height: auto;           
+            background-image: url('../images/slider-faixas.png');
+            background-repeat: no-repeat; 
+            background-position: center;
+        }   
+        .owl-carousel{
+            width: 95%;
+            margin: 0 auto;
+            padding-top: 50px;
+            height: 100%;
+            position: relative;
+            .owl-item{
+                img{
+                    &.slider__img--back{
+                        display: block;
+                    }
+                    &.slider__img--upper{
+                        width: 50%;
+                    }
+                }
+            }  
+        }       
+        &__caption{
+            position: absolute;
+            display: block;
+            bottom: 20px;
+            left: 0;
+            width: 50%;    
+            padding: 0 15px 0 30px;
+            &--title{           
+                text-shadow: 0.5px 0.9px 0 rgba(0, 0, 0, 0.75);            
+                font-size: 30px;            
+                color: #e4f2fd;
+            }
+            &--text{
+                font-size: 15px; 
+                color: #0f2e41;
+            }
+        }   
+        
+        &__img{
+            &--back{
+                display: block;
+                margin: 0 auto; 
+            }
+            &--upper{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 50% !important;
+            }
+        }             
+    }
+}
+@media(min-width: 768px){
+    .slider{
+        &__caption{                   
+            &--title{                           
+                font-size: 45px;               
+            }
+            &--text{
+                font-size: 22px;                 
+            }
+        }           
+        &__img{           
+            &--upper{                
+                bottom: 10px;                
+            }
+        }      
+        .owl-nav{           
+            .owl-prev{
+                span{
+                    width: 37px;
+                    height: 62px;                    
+                }
+            }    
+            .owl-next{
+                span{                    
+                    width: 37px;
+                    height: 62px;                                        
+                }
+            }
+        }      
+    }
+}
+@media(min-width: 1024px){
+    .slider{
+        .owl-carousel{
+            width: 90%;
+            max-width: 986px;
+        }
+    }
+}

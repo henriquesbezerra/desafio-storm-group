@@ -2,6 +2,13 @@
     width: 100%;
     &__wrapper{
         margin: 0 auto;
-        max-width: 300px;
+        max-width: 90%;
+        @media(min-width: 425px){    
+            max-width: 95%;    
+        }
+        @media(min-width: 1024px){    
+            width: 985px;
+        }
     }
 }
+

@@ -27,10 +27,10 @@ var supported = [
 // Configuração dos Caminhos    
 var config = {
     src    : {
-        sass  : "./src/sass/*.scss",
+        sass  : "./src/sass/estilo.scss",
         index : "./src/*.html",
         incs  : "./src/html-parts/*.html",  
-        js    : "./src/js/*.js",
+        js    : "./src/js/*",
         img   : "./src/images/*"
     },
     server : {
