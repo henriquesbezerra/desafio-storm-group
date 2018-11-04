@@ -8,7 +8,17 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/estilo.min.css" />    
 </head>
 <body>
-     
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=274817086272641&autoLogAppEvents=1';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <header>
         <!--#include file="/html-parts/menu.html"-->    
         <!--#include file="/html-parts/slider.html"-->   

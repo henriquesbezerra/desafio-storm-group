@@ -1,0 +1,181 @@
+
+.post{
+    &__section{
+        display: flex;
+        flex-direction: column;
+    }
+    &__item{
+        font-family: "Trebuchet MS";
+        &--header{
+            display: none;
+        }        
+        &--thumb{
+            margin-bottom: 20px;
+            position: relative;
+            .special__border{
+                &-1,  &-2,  &-3{                       
+                    display: none;                   
+                }                                 
+            }
+        }
+        &--img{
+            display: block;
+            width: auto;
+            max-width: 100%;
+            margin-bottom: 5px
+        }
+        &--legend{
+            font-size: 10px;            
+        }
+        &--content{
+            p{
+                font-size: 14px;
+                margin-bottom: 10px;
+                line-height: 18px;
+            }
+
+        }        
+    }
+
+    &__nav{
+        width: 100%;                
+        background-color: rgba(31, 39, 50, 0.41);
+        box-shadow: 2.5px 4.3px 5px 0 rgba(0, 0, 0, 0.75);
+        border: solid 1px #1472b3; 
+        padding: 11px;
+        box-sizing: border-box;
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;  
+        text-align: center;  
+        margin-top: 20px;
+        max-width: 300px;      
+        &--share{
+            border-right: 1px solid #1472b3;
+            padding: 5px 3px;
+            &__separator{
+                display: block;
+                height: 10px;
+            }
+        }
+        &--btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+        }
+        &--ant,  &--prox{
+            display: block;                
+            color: #fff;
+            width: 37px;
+            height: 37px;
+            background-color: #1979bc;
+            margin: 0px auto 7px auto;
+            border-radius: 50%;
+            line-height: 37px;
+            font-size: 28px;
+            font-weight: bold;
+
+            &:hover{
+                background-color: #0f5b91;
+            }
+        }
+        
+    }
+}
+
+@media(min-width: 768px){
+    .post{
+        &__section{
+            flex-direction: row;
+        }
+        &__col{
+            width: 60%;
+            display: flex;
+        }
+        &__item{
+            &--header{
+                display: block;
+                padding-right: 84px;
+            } 
+            &--thumb{
+                .special__border{
+                    &-1,  &-2,  &-3{    
+                        position: absolute;
+                        display: block;
+                        background-color: #268ad1;
+                    }   
+                    &-1{    
+                        width: 80%;
+                        height: 4px;
+                        top: -2px;
+                    }   
+                    &-2{
+                        width: 6px;
+                        right: -3px;
+                        top: -5px;
+                        height: 30px;
+                    }
+                    &-3{
+                        right: -2px;
+                        bottom: 15px;
+                        width: 3px;
+                        height: 70%;
+                    }
+                }
+            }
+            &--img{
+                width: 100%;
+            }
+            &--title{
+                font-size: 17px;
+                margin-bottom: 15px;                
+            }
+            &--description{
+                font-size: 15px;
+                margin-bottom: 15px;                
+            }
+            &--wrapper{
+                display: flex;
+                flex-direction: row;
+            }
+        }
+        &__nav{
+            width: 84px;
+            margin: 0 15px;
+            height: 242px;           
+            flex-direction: column;  
+            text-align: center;        
+            &--share{
+                border-bottom: 1px solid #1472b3;
+                border-right: none;
+                padding: 0 3px 5px 3px;
+                &__separator{
+                    display: block;
+                    height: 10px;
+                }
+            }
+            &--btns{
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            &--ant,  &--prox{
+                display: block;                
+                color: #fff;
+                width: 37px;
+                height: 37px;
+                background-color: #1979bc;
+                margin: 15px auto 7px auto;
+                border-radius: 50%;
+                line-height: 37px;
+                font-size: 28px;
+                font-weight: bold;
+
+                &:hover{
+                    background-color: #0f5b91;
+                }
+            }
+            
+        }
+    }
+}
