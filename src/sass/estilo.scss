@@ -1,8 +1,8 @@
-@import 'reset';
-@import 'grid';
-@import 'menu';
-@import 'slider';
+@import 'helpers/reset';
+@import 'helpers/grid';
+@import 'modules/menu';
+@import 'modules/slider';
 @import 'content/content';
-@import 'contato';
+@import 'modules/contato';
 @import "owlCarrosel/owl.carousel.scss";
 @import "owlCarrosel/owl.theme.default.scss";

@@ -1,0 +1,55 @@
+.post{
+    &__section{
+        display: inline-block;
+        .nav{
+            &__col{
+                float: left;
+            }
+        }
+    }
+    &__col{
+        float: left;
+    }
+    &__item{
+        &--wrapper{
+            display: inline-block;
+            &__article{
+                width: 73%;
+                float: left;
+            }
+        }
+    }
+    &__nav{        
+        float: left;       
+        &--share{            
+            width: 100% !important; 
+            margin-right: auto;           
+        }
+        &--btns{            
+            div{
+                &:first-child, &:last-child{
+                    float: left !important;
+                }                
+            }
+        }
+    }
+}
+.contact{    
+    .form__address{
+        display: inline-block;
+    }
+    &__form{
+        float: left;
+    }
+    &__address{
+        float: left;
+        width: 40%;
+    }
+}
+
+.twitter-share-button{
+    display: block;
+    background-image: url('../images/tweet.png');
+    text-decoration: none;
+    height: 20px;
+}

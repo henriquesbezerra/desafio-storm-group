@@ -3,9 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Storm Group</title>
+    <title>Desafio Storm Group</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/estilo.min.css" />    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/estilo.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="css/estiloIE10-mobile.min.css" />         
+    <!--[if IE 9]>        
+        <link rel="stylesheet" type="text/css" href="css/estiloIE9-mobile.min.css" /> 
+        <link rel="stylesheet" type="text/css" media="(min-width:768px)" href="css/estiloIE9-min768.min.css" />         
+        <link rel="stylesheet" type="text/css" media="(min-width:1024px)" href="css/estiloIE9-min1024.min.css" />         
+    <![endif]-->    
+    <!--[if lt IE 9]>
+        <script src="vendors/html5shiv.min.js"></script>
+        <script src="vendors/html5shiv-printshiv.min.js"></script>
+    <![endif]-->  
 </head>
 <body>
     <div id="fb-root"></div>
@@ -18,7 +28,16 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   <script type="text/javascript">// <![CDATA[
+    (function() {
+            var twitterScriptTag = document.createElement('script');
+            twitterScriptTag.type = 'text/javascript';
+            twitterScriptTag.async = true;
+            twitterScriptTag.src = 'http://platform.twitter.com/widgets.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(twitterScriptTag, s);
+    })();
+    // ]]></script>
     <header>
         <!--#include file="/html-parts/menu.html"-->    
         <!--#include file="/html-parts/slider.html"-->   
@@ -38,6 +57,9 @@
     </main>
    
     
+    <script src="vendors/jquery-3.3.1.min.js"></script>
+    <script src="vendors/owl.carousel.min.js"></script>
+    <script src="vendors/jquery.inputmask.bundle.min.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>
 </html>

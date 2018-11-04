@@ -1,0 +1,20 @@
+.menu{  
+    &__nav{      
+        top: 0px !important;        
+    }
+}
+
+.post{
+    &__nav{        
+        &--share{            
+            width: 100%;            
+        }
+        &--btns{            
+            div{
+                &:first-child, &:last-child{
+                    float: left;
+                }                
+            }
+        }
+    }
+}

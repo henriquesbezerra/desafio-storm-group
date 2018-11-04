@@ -27,22 +27,25 @@ var supported = [
 // Configuração dos Caminhos    
 var config = {
     src    : {
-        sass  : "./src/sass/estilo.scss",
+        sass  : "./src/sass/*.scss",
         index : "./src/*.html",
         incs  : "./src/html-parts/*.html",  
         js    : "./src/js/*",
+        vendors   : "./src/vendors/*",
         img   : "./src/images/*"
     },
     server : {
         root : "./server",
         css  : "./server/css",
         js   : "./server/js",
+        vendors   : "./server/vendors",
         img  : "./server/images"
     },
     dist : {
         root : "./dist",
         css  : "./dist/css",
         js   : "./dist/js",
+        vendors   : "./dist/vendors",
         img  : "./dist/images"
     }
 };
@@ -65,14 +68,26 @@ function compile_css($origin, $dest, $out, $dev = true){
 // Função para tratar o Js, concatena-lo e minifica-lo
 function compile_scripts($origin, $dest, $dev = true){   
     return gulp.src($origin)
-    .pipe(concat('scripts.js'))
-    .pipe(pipeif( $dev, srcmaps.init()))          
-    .pipe(uglify())
-    .pipe(rename({ extname: '.min.js' }))   
-    .pipe(gulp.dest($dest))
-    .pipe(pipeif( $dev, srcmaps.write('.'))) 
-    .pipe(pipeif( $dev, gulp.dest($dest)))       
-    .pipe(bs.stream());
+        .pipe(concat('scripts.js'))
+        .pipe(pipeif( $dev, srcmaps.init()))          
+        .pipe(uglify())
+        .pipe(rename({ extname: '.min.js' }))   
+        .pipe(gulp.dest($dest))
+        .pipe(pipeif( $dev, srcmaps.write('.'))) 
+        .pipe(pipeif( $dev, gulp.dest($dest)))       
+        .pipe(bs.stream());
+}
+
+// Função para tratar o Js, concatena-lo e minifica-lo
+function compile_vendors($origin, $dest, $dev = true){     
+    return gulp.src($origin)       
+        .pipe(pipeif( $dev, srcmaps.init()))          
+        .pipe(uglify())
+        .pipe(rename({ extname: '.min.js' }))   
+        .pipe(gulp.dest($dest))
+        .pipe(pipeif( $dev, srcmaps.write('.'))) 
+        .pipe(pipeif( $dev, gulp.dest($dest)))       
+        .pipe(bs.stream());         
 }
 
 // Apenas Transporta o HTML
@@ -117,6 +132,11 @@ gulp.task('scripts',()=>{
     compile_scripts(config.src.js, config.server.js);
 });
 
+// Trata dos scripts js de terceiros
+gulp.task('vendors',()=>{
+    compile_vendors(config.src.vendors, config.server.vendors, false);
+});
+
 // Inicia a compilação dos scripts
 gulp.task('html',()=>{
     compile_html(config.src.index, config.server.root);
@@ -139,19 +159,19 @@ gulp.task('dev',()=>{
         compile_css(config.src.sass, config.server.css, 'expanded'); 
         compile_scripts(config.src.js, config.server.js);
         compile_html(config.src.index, config.server.root);
-    }
-
-    // Move imgs to server folder
-    compile_imgs(config.src.img, config.server.img);
+        compile_vendors(config.src.vendors, config.server.vendors, false);
+        compile_imgs(config.src.img, config.server.img);
+    }   
     
     gulp.watch(config.src.sass, ['sass']);
     gulp.watch(config.src.js, ['scripts']);
+    gulp.watch(config.src.vendors,['vendors']);
+
     gulp.watch([config.src.index, config.src.incs]).on('change', function(file){
         compile_html(config.src.index, config.server.root);
     });
 
-    watch(config.src.img, function () {
-        console.log('Movendo imagens');
+    watch(config.src.img, function () {       
         compile_imgs(config.src.img, config.server.img);
     });   
 
@@ -161,6 +181,7 @@ gulp.task('dev',()=>{
 gulp.task('dist',()=>{   
     compile_css(config.src.sass, config.dist.css, 'compressed',false); 
     compile_scripts(config.src.js, config.dist.js,false);
+    compile_vendors(config.src.vendors, config.dist.vendors,false);
     compile_html(config.src.index, config.dist.root);   
     compile_imgs(config.src.img ,config.dist.img, true);
 });
