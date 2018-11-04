@@ -1,0 +1,54 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // IE10+ CSS here
+    .menu{
+        &__nav{
+            &.active{
+                height: 340px;
+                overflow: hidden;
+            }
+            .link{                  
+                &.active, &:hover{
+                    height: 59px;
+                }     
+                &:hover{
+                    height: 59px;
+                }                               
+            }
+        }
+    }
+    .main{
+        .post{
+            &__col{
+                float: left;
+                width: 65%;
+            }
+    
+            &__item{
+                &--wrapper{
+                    display: inline-block;
+                    max-width: auto;
+                    &__article{
+                        float: left;
+                        width: 75%;
+                        min-width: 300px;
+                    }
+                }
+            }
+            &__nav{
+                float: left;
+                &--btns{
+                    width: 80%;
+                }
+            }
+        }
+    
+        .nav{
+            &__col{
+                float: left;
+                width: 30%;
+            }
+        }
+    
+    }
+}
+
