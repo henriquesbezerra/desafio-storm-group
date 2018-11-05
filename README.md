@@ -10,7 +10,7 @@
     * Google Chrome v. 21 e posteriores
     * Firefox v. 28 e posteriores 
     * Opera v. 12.1 e posteriores
-    
+
 ## Frameworks js
 
 * __jquery-3.3.1.js__
