@@ -2,6 +2,15 @@
 
 **Live Demo:** [Aqui](https://adoring-keller-9effb2.netlify.com/)
 
+## Compatibilidade
+
+* Browsers Compatíveis:
+    * Internet Explorer v. 9
+    * Internet Explorer v. 10
+    * Google Chrome v. 21 e posteriores
+    * Firefox v. 28 e posteriores 
+    * Opera v. 12.1 e posteriores
+    
 ## Frameworks js
 
 * __jquery-3.3.1.js__
