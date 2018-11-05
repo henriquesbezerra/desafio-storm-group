@@ -2,6 +2,9 @@
 
 **Live Demo:** [Aqui](https://adoring-keller-9effb2.netlify.com/)
 
+## Compatibilidade
+    > Essa página atualmente é compatível apenas com as versão 9 e 10 do Internet Explorer. 
+
 ## Frameworks js
 
 * __jquery-3.3.1.js__
